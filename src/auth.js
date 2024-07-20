@@ -11,8 +11,8 @@ export const { handlers, signIn, signOut, auth }= NextAuth({
         // console.log(credentials);
         // const user = { id: 1, name: 'User', email: 'user@example.com' };
         
-        if (credentials.username === "1" && credentials.password === "1") {
-        // if (credentials.username === process.env.BASIC_USER && credentials.password === process.env.BASIC_PASS) {
+        // if (credentials.username === "1" && credentials.password === "1") {
+        if (credentials.username === process.env.BASIC_USER && credentials.password === process.env.BASIC_PASS) {
           return { id: 1, name: process.env.BASIC_USER, email: 'user@example.com' }
         } else {
           return Promise.resolve(null);
